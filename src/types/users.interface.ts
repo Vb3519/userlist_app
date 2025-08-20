@@ -1,4 +1,5 @@
 // Data:
+// ----------------------------------
 interface User_Adress {
   street: string;
   suite: string;
@@ -19,8 +20,23 @@ export interface User {
   address: User_Adress;
 }
 
+// State:
+// ----------------------------------
+export interface UsersState {
+  users: User[];
+  isUsersDataLoading: boolean;
+  usersDataLoadError: string;
+}
+
+export interface UsersSlice {
+  users: UsersState;
+}
+
 // Components:
-export interface Users_List extends React.HTMLAttributes<HTMLUListElement> {}
+// ----------------------------------
+export interface Users_List extends React.HTMLAttributes<HTMLUListElement> {
+  data: User[];
+}
 
 export interface UserCard_Props extends React.LiHTMLAttributes<HTMLLIElement> {
   name: string;
