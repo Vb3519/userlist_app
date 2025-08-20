@@ -32,6 +32,14 @@ export interface UsersSlice {
   users: UsersState;
 }
 
+export interface UsersFilterState {
+  userNameFilter: string;
+}
+
+export interface UsersFilterSlice {
+  usersFilter: UsersFilterState;
+}
+
 // Components:
 // ----------------------------------
 export interface Users_List extends React.HTMLAttributes<HTMLUListElement> {
@@ -43,3 +51,6 @@ export interface UserCard_Props extends React.LiHTMLAttributes<HTMLLIElement> {
   email: string;
   city: string;
 }
+
+export interface Custom_Input
+  extends React.InputHTMLAttributes<HTMLInputElement> {}

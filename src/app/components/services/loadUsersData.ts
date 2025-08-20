@@ -12,7 +12,7 @@ const loadUsersData = createAsyncThunk(
   'users/loadUsersData',
   async (url: string, thunkApi) => {
     try {
-      await serverResponseImitation(5000);
+      await serverResponseImitation(2000);
 
       const usersDataResponse = await axios.get<User[]>(url);
 
