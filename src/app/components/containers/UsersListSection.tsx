@@ -66,13 +66,13 @@ const UsersListSection = () => {
       <h1 className="text-center font-semibold">Карточки пользователей:</h1>
 
       {isUsersDataLoading && (
-        <h1 className="font-semibold text-center animate-pulse">
+        <h2 className="font-semibold text-center animate-pulse">
           Загружаем данные пользователей
-        </h1>
+        </h2>
       )}
 
       {usersDataLoadError && (
-        <h1 className="font-semibold text-center">Что-то пошло не так :с</h1>
+        <h2 className="font-semibold text-center">Что-то пошло не так :с</h2>
       )}
 
       {usersData.length > 0 && (
