@@ -19,7 +19,7 @@ const usersSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(loadUsersData.pending, (state) => {
-      return { ...state, isUsersDataLoading: true };
+      return { ...state, isUsersDataLoading: true, usersDataLoadError: '' };
     });
 
     builder.addCase(loadUsersData.fulfilled, (state, action) => {

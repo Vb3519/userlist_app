@@ -65,11 +65,17 @@ const UsersListSection = () => {
     <section className="flex flex-col gap-2 xs:px-8 sm:gap-4 lg:px-16 2xl:px-32">
       <h1 className="text-center font-semibold">Карточки пользователей:</h1>
 
-      {isUsersDataLoading ? (
+      {isUsersDataLoading && (
         <h1 className="font-semibold text-center animate-pulse">
           Загружаем данные пользователей
         </h1>
-      ) : !usersDataLoadError ? (
+      )}
+
+      {usersDataLoadError && (
+        <h1 className="font-semibold text-center">Что-то пошло не так :с</h1>
+      )}
+
+      {usersData.length > 0 && (
         <>
           <CustomInput
             placeholder="Имя пользователя..."
@@ -80,8 +86,6 @@ const UsersListSection = () => {
 
           <UsersList data={filteredUsersData} />
         </>
-      ) : (
-        <h1 className="font-semibold text-center">Что-то пошло не так :с</h1>
       )}
     </section>
   );
